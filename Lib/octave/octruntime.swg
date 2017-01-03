@@ -9,7 +9,8 @@
 #include <octave/ov-scalar.h>
 #include <octave/ov-fcn-handle.h>
 #include <octave/parse.h>
-#include <octave/toplev.h>
+#include <octave/interpreter.h>
+#include <octave/call-stack.h>
 #include <octave/unwind-prot.h>
 %}
 
@@ -29,18 +30,18 @@ SWIGINTERN bool SWIG_Octave_LoadModule(std::string name) {
 #if !SWIG_OCTAVE_PREREQ(3,3,50)
     unwind_protect::begin_frame("SWIG_Octave_LoadModule");
     unwind_protect_int(error_state);
-    unwind_protect_int(warning_state);
+    //unwind_protect_int(warning_state);
     unwind_protect_bool(discard_error_messages);
     unwind_protect_bool(discard_warning_messages);
 #else
-    unwind_protect frame;
+    octave::unwind_protect frame;
     frame.protect_var(error_state);
-    frame.protect_var(warning_state);
+    //frame.protect_var(warning_state);
     frame.protect_var(discard_error_messages);
     frame.protect_var(discard_warning_messages);
 #endif
     error_state = 0;
-    warning_state = 0;
+    //warning_state = 0;
     discard_error_messages = true;
     discard_warning_messages = true;
     feval(name, octave_value_list(), 0);
@@ -61,18 +62,18 @@ SWIGINTERN bool SWIG_Octave_InstallFunction(octave_function *octloadfcn, std::st
 #if !SWIG_OCTAVE_PREREQ(3,3,50)
     unwind_protect::begin_frame("SWIG_Octave_InstallFunction");
     unwind_protect_int(error_state);
-    unwind_protect_int(warning_state);
+    //unwind_protect_int(warning_state);
     unwind_protect_bool(discard_error_messages);
     unwind_protect_bool(discard_warning_messages);
 #else
-    unwind_protect frame;
+    octave::unwind_protect frame;
     frame.protect_var(error_state);
-    frame.protect_var(warning_state);
+    //frame.protect_var(warning_state);
     frame.protect_var(discard_error_messages);
     frame.protect_var(discard_warning_messages);
 #endif
     error_state = 0;
-    warning_state = 0;
+    //warning_state = 0;
     discard_error_messages = true;
     discard_warning_messages = true;
     octave_value_list args;

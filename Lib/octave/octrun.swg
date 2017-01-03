@@ -1340,8 +1340,8 @@ octave_value_typeinfo::register_binary_op(octave_value::op_##name,tid1,tid2,swig
   swig_binary_op(div);
   swig_binary_op(pow);
   swig_binary_op(ldiv);
-  swig_binary_op(lshift);
-  swig_binary_op(rshift);
+  //swig_binary_op(lshift);
+  //swig_binary_op(rshift);
   swig_binary_op(lt);
   swig_binary_op(le);
   swig_binary_op(eq);
@@ -1371,8 +1371,8 @@ octave_value_typeinfo::register_binary_op(octave_value::op_##name,tid1,tid2,swig
     swigreg_binary_op(div);
     swigreg_binary_op(pow);
     swigreg_binary_op(ldiv);
-    swigreg_binary_op(lshift);
-    swigreg_binary_op(rshift);
+    //swigreg_binary_op(lshift);
+    //swigreg_binary_op(rshift);
     swigreg_binary_op(lt);
     swigreg_binary_op(le);
     swigreg_binary_op(eq);

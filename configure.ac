@@ -1053,7 +1053,7 @@ if test -n "$OCTAVE"; then
    done
    AC_MSG_RESULT([$OCTAVE_CPPFLAGS])
    AC_MSG_CHECKING([for Octave compiler flags])
-   OCTAVE_CXXFLAGS=
+   OCTAVE_CXXFLAGS="-std=gnu++11"
    for var in ALL_CXXFLAGS; do
       for flag in `env - ${mkoctfile} -p ${var}`; do
          case ${flag} in
